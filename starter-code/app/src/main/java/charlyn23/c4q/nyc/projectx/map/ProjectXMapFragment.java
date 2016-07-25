@@ -23,6 +23,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.accessibility.AccessibilityEvent;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
@@ -327,9 +328,11 @@ public class ProjectXMapFragment extends Fragment implements OnMapReadyCallback,
                             String group = shame.getString(Constants.GROUP_COLUMN);
                             if (group.equals(Constants.OTHER))
                                 group = Constants.PERSON;
-                            Snackbar.make(view, "A " + group + " got harassed on " + readableTime, Snackbar.LENGTH_LONG)
-                                    .setAction(R.string.snackbar_action, new snackbarDetail(marker.getPosition().latitude, marker.getPosition().longitude, type, who, when))
-                                    .show();
+                            Snackbar snackbar = Snackbar.make(view, "A " + group + " got harassed on " + readableTime, Snackbar.LENGTH_LONG)
+                                    .setAction(R.string.snackbar_action, new snackbarDetail(marker.getPosition().latitude, marker.getPosition().longitude, type, who, when));
+                            snackbar.getView().setContentDescription("A" + group + " got harassed on " + readableTime);
+                            snackbar.getView().sendAccessibilityEvent(AccessibilityEvent.TYPE_ANNOUNCEMENT);
+                            snackbar.show();
 
                             Log.i("current shame lat : ", String.valueOf(marker.getPosition().latitude));
                             Log.i("current shame long : ", String.valueOf(marker.getPosition().longitude));
