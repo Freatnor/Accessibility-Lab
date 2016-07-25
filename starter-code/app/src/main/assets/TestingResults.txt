@@ -1,0 +1,17 @@
+
+2. person tab has no contentDescription?, same with the other two -
+3. edit text next focus is still the map even after suggestion list appears
+4. how do I select an option without choosing a suggestion?
+5. reread the item in filter when checked or unchecked?
+6. megaphone icon has no contentDescription and does what exactly?
+7. Read toast when it appears?
+8. FAB is unlabeled, the final item in focus?
+9. login page has all buttons unlabeled and should start focus on the options
+10. first time radial is clicked it gets booted from the list in the new harrasment created dialogue
+11. arrow on overview tab unlabeled
+12. if possible read the percentages on the overview tab if any
+13. profile picture button no label
+14. profile year of birth edit text not reading hint?
+15. bottom switch for identity doesn't read if checked or unchecked after action (see enable notification code)
+16. Detail page mispronounces "Shame"
+17.

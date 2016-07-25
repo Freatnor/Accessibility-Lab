@@ -138,9 +138,12 @@ public class MainActivity extends AppCompatActivity implements ProjectXMapFragme
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
         tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.map));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.stats));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.map)
+        .setContentDescription("Maps Tab"));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.stats)
+        .setContentDescription("Stats Tab"));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile)
+        .setContentDescription("Profile Tab"));
 
         viewPagerAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount(), isLoggedIn, googleLogInClient);
         viewPager.setAdapter(viewPagerAdapter);
